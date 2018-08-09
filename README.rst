@@ -1,4 +1,4 @@
-Zero HAT Bricklet
+HAT Zero Bricklet
 =================
 
 **This Bricklet is currently in development.**
