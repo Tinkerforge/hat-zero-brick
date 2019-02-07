@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:zero-hat-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -850,4 +849,6 @@ Connection ~ 2900 6250
 Connection ~ 3000 6250
 Wire Wire Line
 	3000 6250 3100 6250
+Text Notes 7100 2800 0    315  ~ 0
+Clock Pullup?
 $EndSCHEMATC
