@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:hat-zero-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -169,8 +170,6 @@ F 3 "" H 2950 3300 60  0000 C CNN
 	1    2950 3300
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3100 1550
-NoConn ~ 3100 2850
 Wire Wire Line
 	1850 1650 1850 1600
 Wire Wire Line
@@ -187,12 +186,6 @@ Wire Wire Line
 	4350 900  4350 950 
 Connection ~ 4350 950 
 Wire Wire Line
-	2200 2450 2800 2450
-Wire Wire Line
-	2200 2550 2900 2550
-Wire Wire Line
-	2200 2650 3000 2650
-Wire Wire Line
 	2200 2750 3150 2750
 Wire Wire Line
 	2950 3300 2950 3250
@@ -200,32 +193,6 @@ Connection ~ 2950 3250
 Wire Wire Line
 	2950 1950 2950 2000
 Connection ~ 2950 1950
-Wire Wire Line
-	2200 1450 3150 1450
-Wire Wire Line
-	2200 1350 3000 1350
-Wire Wire Line
-	2200 1250 2900 1250
-Wire Wire Line
-	2200 1150 2800 1150
-Wire Wire Line
-	2800 2850 2800 2450
-Connection ~ 2800 2450
-Wire Wire Line
-	2900 2850 2900 2550
-Connection ~ 2900 2550
-Wire Wire Line
-	3000 2850 3000 2650
-Connection ~ 3000 2650
-Wire Wire Line
-	2800 1550 2800 1150
-Connection ~ 2800 1150
-Wire Wire Line
-	2900 1550 2900 1250
-Connection ~ 2900 1250
-Wire Wire Line
-	3000 1550 3000 1350
-Connection ~ 3000 1350
 Wire Wire Line
 	3850 1150 3550 1150
 Wire Wire Line
@@ -520,8 +487,6 @@ F 3 "" H 2950 6300 60  0000 C CNN
 	1    2950 6300
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3100 4550
-NoConn ~ 3100 5850
 Wire Wire Line
 	1850 4650 1850 4600
 Wire Wire Line
@@ -538,12 +503,6 @@ Wire Wire Line
 	4350 3900 4350 3950
 Connection ~ 4350 3950
 Wire Wire Line
-	2200 5450 2800 5450
-Wire Wire Line
-	2200 5550 2900 5550
-Wire Wire Line
-	2200 5650 3000 5650
-Wire Wire Line
 	2200 5750 3150 5750
 Wire Wire Line
 	2950 6300 2950 6250
@@ -553,30 +512,6 @@ Wire Wire Line
 Connection ~ 2950 4950
 Wire Wire Line
 	2200 4450 3150 4450
-Wire Wire Line
-	2200 4350 3000 4350
-Wire Wire Line
-	2200 4250 2900 4250
-Wire Wire Line
-	2200 4150 2800 4150
-Wire Wire Line
-	2800 5850 2800 5450
-Connection ~ 2800 5450
-Wire Wire Line
-	2900 5850 2900 5550
-Connection ~ 2900 5550
-Wire Wire Line
-	3000 5850 3000 5650
-Connection ~ 3000 5650
-Wire Wire Line
-	2800 4550 2800 4150
-Connection ~ 2800 4150
-Wire Wire Line
-	2900 4550 2900 4250
-Connection ~ 2900 4250
-Wire Wire Line
-	3000 4550 3000 4350
-Connection ~ 3000 4350
 Wire Wire Line
 	3850 4150 3550 4150
 Wire Wire Line
@@ -770,18 +705,6 @@ Wire Wire Line
 Wire Wire Line
 	2950 1950 3000 1950
 Wire Wire Line
-	2800 2450 3150 2450
-Wire Wire Line
-	2900 2550 3150 2550
-Wire Wire Line
-	3000 2650 3150 2650
-Wire Wire Line
-	2800 1150 3150 1150
-Wire Wire Line
-	2900 1250 3150 1250
-Wire Wire Line
-	3000 1350 3150 1350
-Wire Wire Line
 	4850 1850 3700 1850
 Wire Wire Line
 	4850 1350 5000 1350
@@ -791,18 +714,6 @@ Wire Wire Line
 	2900 4950 2950 4950
 Wire Wire Line
 	2950 4950 3000 4950
-Wire Wire Line
-	2800 5450 3150 5450
-Wire Wire Line
-	2900 5550 3150 5550
-Wire Wire Line
-	3000 5650 3150 5650
-Wire Wire Line
-	2800 4150 3150 4150
-Wire Wire Line
-	2900 4250 3150 4250
-Wire Wire Line
-	3000 4350 3150 4350
 Wire Wire Line
 	4850 4850 3700 4850
 Wire Wire Line
@@ -849,6 +760,166 @@ Connection ~ 2900 6250
 Connection ~ 3000 6250
 Wire Wire Line
 	3000 6250 3100 6250
-Text Notes 7100 2800 0    315  ~ 0
-Clock Pullup?
+Wire Wire Line
+	2200 1150 3100 1150
+NoConn ~ 2800 1550
+Wire Wire Line
+	2200 1350 2900 1350
+Wire Wire Line
+	2200 1450 3150 1450
+Wire Wire Line
+	2200 1250 2600 1250
+Wire Wire Line
+	3100 1550 3100 1150
+Connection ~ 3100 1150
+Wire Wire Line
+	3100 1150 3150 1150
+Wire Wire Line
+	3000 1550 3000 1250
+Connection ~ 3000 1250
+Wire Wire Line
+	3000 1250 3150 1250
+Wire Wire Line
+	2900 1550 2900 1350
+Connection ~ 2900 1350
+Wire Wire Line
+	2900 1350 3150 1350
+Wire Wire Line
+	2200 2450 3100 2450
+Wire Wire Line
+	2200 2550 2600 2550
+Wire Wire Line
+	2200 2650 2900 2650
+Wire Wire Line
+	3100 2850 3100 2450
+Connection ~ 3100 2450
+Wire Wire Line
+	3100 2450 3150 2450
+Wire Wire Line
+	3000 2850 3000 2550
+Connection ~ 3000 2550
+Wire Wire Line
+	3000 2550 3150 2550
+Wire Wire Line
+	2900 2850 2900 2650
+Connection ~ 2900 2650
+Wire Wire Line
+	2900 2650 3150 2650
+Wire Wire Line
+	2200 4350 2900 4350
+Wire Wire Line
+	2200 4250 2600 4250
+Wire Wire Line
+	2200 4150 3100 4150
+Wire Wire Line
+	2900 4550 2900 4350
+Connection ~ 2900 4350
+Wire Wire Line
+	2900 4350 3150 4350
+Wire Wire Line
+	3000 4550 3000 4250
+Connection ~ 3000 4250
+Wire Wire Line
+	3000 4250 3150 4250
+Wire Wire Line
+	3100 4550 3100 4150
+Connection ~ 3100 4150
+Wire Wire Line
+	3100 4150 3150 4150
+Wire Wire Line
+	2200 5550 2600 5550
+Wire Wire Line
+	2200 5450 3100 5450
+Wire Wire Line
+	2200 5650 2900 5650
+Wire Wire Line
+	3100 5850 3100 5450
+Connection ~ 3100 5450
+Wire Wire Line
+	3100 5450 3150 5450
+Wire Wire Line
+	3000 5550 3000 5850
+Connection ~ 3000 5550
+Wire Wire Line
+	3000 5550 3150 5550
+Wire Wire Line
+	2900 5850 2900 5650
+Connection ~ 2900 5650
+Wire Wire Line
+	2900 5650 3150 5650
+NoConn ~ 2800 5850
+NoConn ~ 2800 4550
+NoConn ~ 2800 2850
+$Comp
+L tinkerforge:R R1
+U 1 1 5C963D05
+P 2600 950
+F 0 "R1" H 2671 996 50  0000 L CNN
+F 1 "100k" H 2671 905 50  0000 L CNN
+F 2 "kicad-libraries:R0402F" H 2671 859 60  0001 L CNN
+F 3 "" H 2600 950 60  0000 C CNN
+	1    2600 950 
+	1    0    0    -1  
+$EndComp
+Text GLabel 2600 700  1    39   Input ~ 0
+B-3V3
+Wire Wire Line
+	2600 1200 2600 1250
+Connection ~ 2600 1250
+Wire Wire Line
+	2600 1250 3000 1250
+$Comp
+L tinkerforge:R R2
+U 1 1 5C96DDAB
+P 2600 2250
+F 0 "R2" H 2671 2296 50  0000 L CNN
+F 1 "100k" H 2671 2205 50  0000 L CNN
+F 2 "kicad-libraries:R0402F" H 2600 2250 60  0001 C CNN
+F 3 "" H 2600 2250 60  0000 C CNN
+	1    2600 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:R R3
+U 1 1 5C96DE69
+P 2600 3950
+F 0 "R3" H 2671 3996 50  0000 L CNN
+F 1 "100k" H 2671 3905 50  0000 L CNN
+F 2 "kicad-libraries:R0402F" H 2600 3950 60  0001 C CNN
+F 3 "" H 2600 3950 60  0000 C CNN
+	1    2600 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L tinkerforge:R R4
+U 1 1 5C96DF1C
+P 2600 5250
+F 0 "R4" H 2671 5296 50  0000 L CNN
+F 1 "100k" H 2671 5205 50  0000 L CNN
+F 2 "kicad-libraries:R0402F" H 2600 5250 60  0001 C CNN
+F 3 "" H 2600 5250 60  0000 C CNN
+	1    2600 5250
+	1    0    0    -1  
+$EndComp
+Text GLabel 2600 2000 1    39   Input ~ 0
+B-3V3
+Text GLabel 2600 3700 1    39   Input ~ 0
+B-3V3
+Text GLabel 2600 5000 1    39   Input ~ 0
+B-3V3
+Wire Wire Line
+	2600 2500 2600 2550
+Connection ~ 2600 2550
+Wire Wire Line
+	2600 2550 3000 2550
+Wire Wire Line
+	2600 4200 2600 4250
+Connection ~ 2600 4250
+Wire Wire Line
+	2600 4250 3000 4250
+Wire Wire Line
+	2600 5500 2600 5550
+Connection ~ 2600 5550
+Wire Wire Line
+	2600 5550 3000 5550
 $EndSCHEMATC
