@@ -1,5 +1,5 @@
 /* hat-zero-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+ * Copyright (C) 2019 Olaf Lüke <olaf@tinkerforge.com>
  *
  * communication.c: TFP protocol message handling
  *
@@ -24,16 +24,22 @@
 #include "bricklib2/utility/communication_callback.h"
 #include "bricklib2/protocols/tfp/tfp.h"
 
+#include "voltage.h"
+
 BootloaderHandleMessageResponse handle_message(const void *message, void *response) {
 	switch(tfp_get_fid_from_message(message)) {
-
+		case FID_GET_USB_VOLTAGE: return get_usb_voltage(message, response);
 		default: return HANDLE_MESSAGE_RESPONSE_NOT_SUPPORTED;
 	}
 }
 
 
+BootloaderHandleMessageResponse get_usb_voltage(const GetUSBVoltage *data, GetUSBVoltage_Response *response) {
+	response->header.length = sizeof(GetUSBVoltage_Response);
+	response->voltage       = voltage_get_usb_voltage();
 
-
+	return HANDLE_MESSAGE_RESPONSE_NEW_MESSAGE;
+}
 
 
 

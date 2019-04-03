@@ -1,5 +1,5 @@
 /* hat-zero-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+ * Copyright (C) 2019 Olaf Lüke <olaf@tinkerforge.com>
  *
  * communication.h: TFP protocol message handling
  *
@@ -53,12 +53,21 @@ void communication_init(void);
 #define HAT_ZERO_STATUS_LED_CONFIG_SHOW_STATUS 3
 
 // Function and callback IDs and structs
+#define FID_GET_USB_VOLTAGE 1
 
 
+typedef struct {
+	TFPMessageHeader header;
+} __attribute__((__packed__)) GetUSBVoltage;
+
+typedef struct {
+	TFPMessageHeader header;
+	uint16_t voltage;
+} __attribute__((__packed__)) GetUSBVoltage_Response;
 
 
 // Function prototypes
-
+BootloaderHandleMessageResponse get_usb_voltage(const GetUSBVoltage *data, GetUSBVoltage_Response *response);
 
 // Callbacks
 
