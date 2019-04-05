@@ -1,7 +1,7 @@
-/* hat-zero-bricklet
- * Copyright (C) 2018 Olaf Lüke <olaf@tinkerforge.com>
+/* hat-zero-brick
+ * Copyright (C) 2018-2019 Olaf Lüke <olaf@tinkerforge.com>
  *
- * main.c: Initialization for HAT Zero Bricklet
+ * main.c: Initialization for HAT Zero Brick
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
