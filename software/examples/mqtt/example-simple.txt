@@ -1,0 +1,6 @@
+# Change XXYYZZ to the UID of your HAT Zero Brick
+
+setup:
+	# Get current voltage
+	subscribe to tinkerforge/response/hat_zero_brick/XXYYZZ/get_usb_voltage
+	publish '' to tinkerforge/request/hat_zero_brick/XXYYZZ/get_usb_voltage
