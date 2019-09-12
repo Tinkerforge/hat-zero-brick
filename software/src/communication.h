@@ -34,6 +34,13 @@ void communication_tick(void);
 void communication_init(void);
 
 // Constants
+
+#define HAT_ZERO_THRESHOLD_OPTION_OFF 'x'
+#define HAT_ZERO_THRESHOLD_OPTION_OUTSIDE 'o'
+#define HAT_ZERO_THRESHOLD_OPTION_INSIDE 'i'
+#define HAT_ZERO_THRESHOLD_OPTION_SMALLER '<'
+#define HAT_ZERO_THRESHOLD_OPTION_GREATER '>'
+
 #define HAT_ZERO_BOOTLOADER_MODE_BOOTLOADER 0
 #define HAT_ZERO_BOOTLOADER_MODE_FIRMWARE 1
 #define HAT_ZERO_BOOTLOADER_MODE_BOOTLOADER_WAIT_FOR_REBOOT 2
@@ -54,27 +61,23 @@ void communication_init(void);
 
 // Function and callback IDs and structs
 #define FID_GET_USB_VOLTAGE 1
+#define FID_SET_USB_VOLTAGE_CALLBACK_CONFIGURATION 2
+#define FID_GET_USB_VOLTAGE_CALLBACK_CONFIGURATION 3
 
+#define FID_CALLBACK_USB_VOLTAGE 4
 
-typedef struct {
-	TFPMessageHeader header;
-} __attribute__((__packed__)) GetUSBVoltage;
-
-typedef struct {
-	TFPMessageHeader header;
-	uint16_t voltage;
-} __attribute__((__packed__)) GetUSBVoltage_Response;
 
 
 // Function prototypes
-BootloaderHandleMessageResponse get_usb_voltage(const GetUSBVoltage *data, GetUSBVoltage_Response *response);
+
 
 // Callbacks
-
+bool handle_usb_voltage_callback(void);
 
 #define COMMUNICATION_CALLBACK_TICK_WAIT_MS 1
-#define COMMUNICATION_CALLBACK_HANDLER_NUM 0
+#define COMMUNICATION_CALLBACK_HANDLER_NUM 1
 #define COMMUNICATION_CALLBACK_LIST_INIT \
+	handle_usb_voltage_callback, \
 
 
 #endif

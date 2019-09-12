@@ -25,6 +25,6 @@
 #include <stdint.h>
 
 void voltage_init(void);
-uint32_t voltage_get_usb_voltage(void);
+uint16_t voltage_get_usb_voltage(void);
 
 #endif

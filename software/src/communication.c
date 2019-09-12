@@ -23,30 +23,34 @@
 
 #include "bricklib2/utility/communication_callback.h"
 #include "bricklib2/protocols/tfp/tfp.h"
+#include "bricklib2/utility/callback_value.h"
 
+#include "configs/config.h"
 #include "voltage.h"
+
+CallbackValue_uint16_t callback_value_usb_voltage;
+
 
 BootloaderHandleMessageResponse handle_message(const void *message, void *response) {
 	switch(tfp_get_fid_from_message(message)) {
-		case FID_GET_USB_VOLTAGE: return get_usb_voltage(message, response);
+		case FID_GET_USB_VOLTAGE: return get_callback_value_uint16_t(message, response, &callback_value_usb_voltage);
+		case FID_SET_USB_VOLTAGE_CALLBACK_CONFIGURATION: return set_callback_value_callback_configuration_uint16_t(message, &callback_value_usb_voltage);
+		case FID_GET_USB_VOLTAGE_CALLBACK_CONFIGURATION: return get_callback_value_callback_configuration_uint16_t(message, response, &callback_value_usb_voltage);
 		default: return HANDLE_MESSAGE_RESPONSE_NOT_SUPPORTED;
 	}
 }
 
 
-BootloaderHandleMessageResponse get_usb_voltage(const GetUSBVoltage *data, GetUSBVoltage_Response *response) {
-	response->header.length = sizeof(GetUSBVoltage_Response);
-	response->voltage       = voltage_get_usb_voltage();
-
-	return HANDLE_MESSAGE_RESPONSE_NEW_MESSAGE;
+bool handle_usb_voltage_callback(void) {
+	return handle_callback_value_callback_uint16_t(&callback_value_usb_voltage, FID_CALLBACK_USB_VOLTAGE);
 }
-
-
 
 void communication_tick(void) {
 	communication_callback_tick();
 }
 
 void communication_init(void) {
+	callback_value_init_uint16_t(&callback_value_usb_voltage, voltage_get_usb_voltage);
+
 	communication_callback_init();
 }

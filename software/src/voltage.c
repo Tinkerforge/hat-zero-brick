@@ -136,7 +136,7 @@ void voltage_init(void) {
 }
 
 // resistor divider 10k/10, 4x reduction, 12 bit -> mV
-uint32_t voltage_get_usb_voltage(void) {
+uint16_t voltage_get_usb_voltage(void) {
     uint32_t v = (((uint64_t)voltage_usb)*3300*2)/(VOLTAGE_MAX_LENGTH*4*4095);
     return v < 2500 ? 0 : v;
 }
