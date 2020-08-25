@@ -1,14 +1,9 @@
-
-
 #include "bindings/hal_common.h"
 #include "bindings/brick_hat_zero.h"
 
 #define UID "XXYYZZ" // Change XXYYZZ to the UID of your HAT Zero Brick
 
 void check(int rc, const char* msg);
-
-
-
 
 TF_HATZero hz;
 
