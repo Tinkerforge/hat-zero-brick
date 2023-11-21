@@ -24,6 +24,8 @@
 #include "bricklib2/logging/logging.h"
 #include "configs/config_eeprom.h"
 
+#include "eeprom_data.h"
+
 #include "xmc_scu.h"
 
 typedef enum XMC_I2C_CH_TDF {
@@ -40,9 +42,6 @@ typedef enum XMC_I2C_CH_TDF {
 
 #define eeprom_tx_handler       IRQ_Hdlr_12
 #define eeprom_protocol_handler IRQ_Hdlr_11
-
-#define EEPROM_DATA_LENGTH sizeof(eeprom_data)
-extern const uint8_t eeprom_data[];
 
 static volatile uint32_t eeprom_register = 0;
 

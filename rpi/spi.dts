@@ -2,27 +2,42 @@
 /plugin/;
 
 / {
-	compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2708", "brcm,bcm2709";
+	/*
+	This is spi0-0cs-overlay.dts (from here: https://github.com/raspberrypi/linux/blob/rpi-6.1.y/arch/arm/boot/dts/overlays/spi0-0cs-overlay.dts )
+	Also the file is marked as compatible with any Raspberry Pi.
+	*/
+	compatible = "brcm,bcm2835", "brcm,bcm2836", "brcm,bcm2708", "brcm,bcm2709", "brcm,bcm2712";
 
-    fragment@0
-    {
-        target = <&spi0>;
-        __overlay__
-        {
-            status = "okay";
-            pinctrl-0 = <&spi0_pins>;
-  
-            spidev@0
-            {
-                status = "okay";
-                compatible = "spidev";
-                spi-max-frequency = <1400000>;
-            };
+	fragment@0 {
+		target = <&spi0_cs_pins>;
+		frag0: __overlay__ {
+			brcm,pins;
+		};
+	};
 
-            spidev@1
-            {
-                status = "disabled";
-            };
-        };
+	fragment@1 {
+		target = <&spi0>;
+		__overlay__ {
+			cs-gpios;
+			status = "okay";
+		};
+	};
+
+	fragment@2 {
+		target = <&spidev1>;
+		__overlay__ {
+			status = "disabled";
+		};
+	};
+
+	fragment@3 {
+		target = <&spi0_pins>;
+		__dormant__ {
+			brcm,pins = <10 11>;
+		};
+	};
+
+	__overrides__ {
+		no_miso = <0>,"=3";
 	};
 };
